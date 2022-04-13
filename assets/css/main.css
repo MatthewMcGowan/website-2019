@@ -1,7 +1,12 @@
+:root {
+  --background-purple: #32222B;
+  --text-green: #E1EAE5
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
-  background: white;
-  color: black;
+  background: var(--background-purple);
+  color: var(--text-green);
 }
 
 header {
@@ -37,11 +42,11 @@ img.profile {
 
 a {
   font-size: 2rem;
-  color: black;
+  color: var(--text-green);
   text-decoration: none;
 }
 
-a:hover { border-bottom: 0.1rem solid black; }
+a:hover { border-bottom: 0.1rem solid var(--text-green); }
 
 ul {
   list-style-type: none;
@@ -49,6 +54,6 @@ ul {
   padding: 0;
 }
 
-li {
-  display:inline;
+li:not(:last-child) { 
+  margin-bottom: 10px;  
 }
