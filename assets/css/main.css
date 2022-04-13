@@ -41,7 +41,7 @@ img.profile {
 }
 
 a {
-  font-size: 2rem;
+  font-size: 3vw;
   color: var(--text-green);
   text-decoration: none;
 }
