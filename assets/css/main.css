@@ -40,18 +40,31 @@ img.profile {
   margin-right: auto;
 }
 
-a {
-  font-size: 3vw;
-  color: var(--text-green);
-  text-decoration: none;
-}
-
-a:hover { border-bottom: 0.1rem solid var(--text-green); }
-
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: var(--text-green);
+  text-decoration: none;
+}
+
+a:hover { 
+  border-bottom: 0.1rem solid var(--text-green); 
+}
+
+@media screen and (min-width: 851px) {
+  a {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  a {
+    font-size: 3vw;
+  }
 }
 
 li:not(:last-child) { 
