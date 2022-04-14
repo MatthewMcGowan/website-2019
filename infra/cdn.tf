@@ -15,16 +15,9 @@ resource "aws_cloudfront_distribution" "cdn" {
     cached_methods   = ["GET", "HEAD"]
     target_origin_id = aws_s3_bucket.staticFiles.bucket_regional_domain_name
     //cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6"
+    cache_policy_id = data.aws_cloudfront_cache_policy.default_caching_optimised.id
     compress = true
     viewer_protocol_policy = "redirect-to-https"
-
-    forwarded_values {
-      query_string = false
-
-      cookies {
-        forward = "none"
-      }
-    }
   }
 
   restrictions {
@@ -41,6 +34,6 @@ resource "aws_cloudfront_distribution" "cdn" {
   }
 }
 
-# resource "aws_cloudfront_cache_policy" "example" {
-
-# }
+data "aws_cloudfront_cache_policy" "default_caching_optimised" {
+  name = "Managed-CachingOptimized"
+}
